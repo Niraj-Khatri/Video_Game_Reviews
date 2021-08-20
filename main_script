@@ -1,0 +1,108 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled2.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOBwn/sPWb/m9blW9XnxEZQ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Niraj-Khatri/Pyspark-AWS/blob/master/main_script\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XQNtWFDgFL2z",
+        "outputId": "77b06cb8-e4e8-443e-aa47-c322de917e24"
+      },
+      "source": [
+        "import os\n",
+        "# Find the latest version of spark 3.0  from http://www-us.apache.org/dist/spark/ and enter as the spark version\n",
+        "# For example:\n",
+        "# spark_version = 'spark-3.0.2'\n",
+        "spark_version = 'spark-3.0.3'\n",
+        "os.environ['SPARK_VERSION']=spark_version\n",
+        "\n",
+        "# Install Spark and Java\n",
+        "!apt-get update\n",
+        "!apt-get install openjdk-11-jdk-headless -qq > /dev/null\n",
+        "!wget -q http://www.apache.org/dist/spark/$SPARK_VERSION/$SPARK_VERSION-bin-hadoop2.7.tgz\n",
+        "!tar xf $SPARK_VERSION-bin-hadoop2.7.tgz\n",
+        "!pip install -q findspark\n",
+        "\n",
+        "# Set Environment Variables\n",
+        "os.environ[\"JAVA_HOME\"] = \"/usr/lib/jvm/java-11-openjdk-amd64\"\n",
+        "os.environ[\"SPARK_HOME\"] = f\"/content/{spark_version}-bin-hadoop2.7\"\n",
+        "\n",
+        "# Start a SparkSession\n",
+        "import findspark\n",
+        "findspark.init()"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Get:1 https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/ InRelease [3,626 B]\n",
+            "Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]\n",
+            "Ign:3 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64  InRelease\n",
+            "Hit:4 http://archive.ubuntu.com/ubuntu bionic InRelease\n",
+            "Ign:5 https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64  InRelease\n",
+            "Hit:6 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64  Release\n",
+            "Hit:7 https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64  Release\n",
+            "Get:8 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]\n",
+            "Get:9 http://ppa.launchpad.net/c2d4u.team/c2d4u4.0+/ubuntu bionic InRelease [15.9 kB]\n",
+            "Get:10 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]\n",
+            "Hit:11 http://ppa.launchpad.net/cran/libgit2/ubuntu bionic InRelease\n",
+            "Hit:12 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease\n",
+            "Hit:13 http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu bionic InRelease\n",
+            "Get:14 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [1,424 kB]\n",
+            "Get:15 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [2,294 kB]\n",
+            "Get:16 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [543 kB]\n",
+            "Get:19 http://ppa.launchpad.net/c2d4u.team/c2d4u4.0+/ubuntu bionic/main Sources [1,792 kB]\n",
+            "Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [2,730 kB]\n",
+            "Get:21 http://ppa.launchpad.net/c2d4u.team/c2d4u4.0+/ubuntu bionic/main amd64 Packages [917 kB]\n",
+            "Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [2,199 kB]\n",
+            "Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [34.4 kB]\n",
+            "Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [575 kB]\n",
+            "Fetched 12.8 MB in 5s (2,334 kB/s)\n",
+            "Reading package lists... Done\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8M8i92H_FMR8"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
