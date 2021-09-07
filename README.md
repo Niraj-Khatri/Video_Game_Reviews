@@ -1,6 +1,6 @@
 <h1 align="center"> Pyspark-AWS Project </h1>
 
-The goal of this project was to extract Amazon product review data, clean the data, and load the data to a Postgres database using AWS RDS. Afterwards, I did analysis on the data to determine whether a certfied Amazon vine reviewer provided more helpful reviews than a non-vine reviewer.
+The goal of this project was to extract Amazon product review data, clean the data, and load the data to a Postgres database using AWS RDS. Afterwards, I did analysis on the data to determine whether a certified Amazon vine reviewer provided more helpful reviews than a non-vine reviewer.
 
 
 <h2 align="center"> ETL </h2>
